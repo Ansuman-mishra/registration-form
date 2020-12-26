@@ -42,7 +42,7 @@ public class UserServiceImpl implements IUserService {
 
 	@Override
 	public Map<Integer, String> findStates(Integer countryId){
-		Map<Integer, String> statesList = new HashMap<>();
+		Map<Integer, String> states = new HashMap<>();
 		List<State> statesList = stateRepo.findBycountryId(countryId);
 		statesList.forEach(state ->{states.put(state.getStateId(), country.getStateName());});
 		return states;
@@ -51,7 +51,7 @@ public class UserServiceImpl implements IUserService {
 	@Override
 	public Map<Integer, String> findCities(Integer stateId){
 		Map<Integer, String> cities = new HashMap<>();
-		List<City> citiesList = cityRepo.findBycountryId(stateId);
+		List<City> citiesList = cityRepo.findByStateId(stateId);
 		statesList.forEach(city ->{cities.put(cities.getStateId(), city.getCityName());});
 		return cities;
 	}
