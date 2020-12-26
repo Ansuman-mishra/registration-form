@@ -103,11 +103,10 @@ public class UserServiceImpl implements IUserService {
 	@Override
 	public boolean unlockAccount(String email, String newPwd) {
 		User userDetails = userRepo.findByEmailId(email);
-		userDetails.setPassword(newPwd);
-		userDetails.setAccountStatus("Y");
-		try {
-			userRepo.save(entity)
+		if(userDetails !=null) {
+			return userDetails.getPassword();
 		}
+		return null;
 	}
 	
 	
