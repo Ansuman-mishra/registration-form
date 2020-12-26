@@ -107,23 +107,7 @@ public class UserServiceImpl implements IUserService {
 			return userDetails.getPassword();
 		}
 		return null;
-	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+	}	
 	
 }
 
